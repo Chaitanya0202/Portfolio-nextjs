@@ -80,9 +80,9 @@ export const projectsData = [
     "Developed my personal portfolio website using React, showcasing my projects, skills, and achievements.",
     tags: ["NEXT.js", "framer-motion", "GitHub", "Tailwind", "Vercel"],
     imageUrl: portfolio,
-    viewLink: "#",
-    videoLink: "#",
-    githubLink: "#",
+    viewLink: "https://gregarious-cat-bc75c0.netlify.app/",
+    videoLink: "https://gregarious-cat-bc75c0.netlify.app/",
+    githubLink: "https://github.com/Chaitanya0202/Portfolio-nextjs",
   },
   {
     title: "Food Web Apllication",
