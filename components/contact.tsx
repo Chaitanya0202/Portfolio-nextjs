@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from '@/context/theme-context';
 import emailjs from '@emailjs/browser';
 import { TextField } from "@mui/material";
 import { motion } from "framer-motion";
@@ -9,6 +10,7 @@ import SectionHeading from "./section-heading";
 import SubmitBtn from "./submit-btn";
 
 export default function Contact() {
+  const { theme } = useTheme();
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail =async (event: React.FormEvent<HTMLFormElement>) => {
@@ -56,36 +58,41 @@ export default function Contact() {
         onSubmit={sendEmail}
         className="mt-10 flex flex-col dark:text-black"
       >
-        <TextField
-          variant="filled"
-          fullWidth
-          required
-          type="email"
-          name="from_name"
-          placeholder="Your email"
-          color="primary"
-          inputProps={{ maxLength: 500 }}
-          sx={{
-            '& .MuiInputBase-root': {
-              color: 'white',
-            },
-            '& .MuiInputLabel-root': {
-              color: 'white',
-            },
-            '& .MuiFilledInput-root': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            },
-            '& .MuiFilledInput-underline:before': {
-              borderBottomColor: 'white',
-            },
-            '& .MuiFilledInput-underline:after': {
-              borderBottomColor: 'red',
-            },
-            '& .MuiFilledInput-input::placeholder': {
-              color: 'rgba(255, 255, 255, 0.5)',
-            },
-          }}
-        />
+       <TextField
+      variant="filled"
+      fullWidth
+      required
+      type="email"
+      name="from_name"
+      placeholder="Your email"
+      color="primary"
+      inputProps={{ maxLength: 500 }}
+      sx={{
+        '& .MuiInputBase-root': {
+          color: theme === 'dark' ? 'white' : 'black',
+        },
+        '& .MuiInputLabel-root': {
+          color: theme === 'dark' ? 'white' : 'black',
+        },
+        '& .MuiFilledInput-root': {
+          backgroundColor: theme === 'dark'
+            ? 'rgba(255, 255, 255, 0.1)'
+            : 'rgba(0, 0, 0, 0.1)',
+        },
+        '& .MuiFilledInput-underline:before': {
+          borderBottomColor: theme === 'dark' ? 'white' : 'black',
+        },
+        '& .MuiFilledInput-underline:after': {
+          borderBottomColor: 'red',
+        },
+        '& .MuiFilledInput-input::placeholder': {
+          color: theme === 'dark'
+            ? 'rgba(255, 255, 255, 0.5)'
+            : 'rgba(0, 0, 0, 0.5)',
+        },
+      }}
+      
+    />
 
         <TextField
           variant="filled"
@@ -98,22 +105,26 @@ export default function Contact() {
           inputProps={{ maxLength: 5000 }}
           sx={{
             '& .MuiInputBase-root': {
-              color: 'white',
+              color: theme === 'dark' ? 'white' : 'black',
             },
             '& .MuiInputLabel-root': {
-              color: 'white',
+              color: theme === 'dark' ? 'white' : 'black',
             },
             '& .MuiFilledInput-root': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              backgroundColor: theme === 'dark'
+                ? 'rgba(255, 255, 255, 0.1)'
+                : 'rgba(0, 0, 0, 0.1)',
             },
             '& .MuiFilledInput-underline:before': {
-              borderBottomColor: 'white',
+              borderBottomColor: theme === 'dark' ? 'white' : 'black',
             },
             '& .MuiFilledInput-underline:after': {
               borderBottomColor: 'red',
             },
             '& .MuiFilledInput-input::placeholder': {
-              color: 'rgba(255, 255, 255, 0.5)',
+              color: theme === 'dark'
+                ? 'rgba(255, 255, 255, 0.5)'
+                : 'rgba(0, 0, 0, 0.5)',
             },
             marginTop: 7,
             marginBottom: 5,
