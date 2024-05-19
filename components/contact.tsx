@@ -9,23 +9,27 @@ import SectionHeading from "./section-heading";
 import SubmitBtn from "./submit-btn";
 
 export default function Contact() {
-  const form = useRef<HTMLFormElement | null>(null);;
+  const form = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const sendEmail =async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-    emailjs
-      .sendForm('service_pay03ib', 'template_hqddj0a', form.current, 'lROG3sen8B7F0LZUn')
-      .then(
-        () => {
-          toast.success('Email sent successfully!');
-          form.current.reset(); // Reset form after successful submission
-        },
-        (error) => {
-          toast.error('Failed to send email. Please try again.');
-          console.error('Failed...', error.text);
-        },
-      );
+    if (form.current) {
+      emailjs
+        .sendForm('service_pay03ib', 'template_hqddj0a', form.current, 'lROG3sen8B7F0LZUn')
+        .then(
+          () => {
+            toast.success('Email sent successfully!');
+            // form.current.reset(); // Reset form after successful submission
+          },
+          (error) => {
+            toast.error('Failed to send email. Please try again.');
+            console.error('Failed...', error.text);
+          }
+        );
+    } else {
+      toast.error('Form reference is not available.');
+    }
   };
 
   return (
@@ -116,7 +120,7 @@ export default function Contact() {
           }}
         />
 
-        <SubmitBtn type="submit" value="Send" />
+        <SubmitBtn />
       </form>
     </motion.section>
   );
