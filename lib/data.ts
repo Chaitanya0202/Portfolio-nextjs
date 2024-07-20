@@ -67,7 +67,7 @@ export const experiencesData = [
     title: "Full-Stack Developer",
     location: "",
     description:
-      "I have secured a full-time position as a full-stack developer at Yasham Software Services Pvt Ltd company after completing my training. I am excited to apply my skills in solving real-world problems and continuing to enhance my abilities in this dynamic field",
+      "I have secured a full-time position as a full-stack Web developer at A Pixel House . I am excited to apply my skills in solving real-world problems and continuing to enhance my abilities in this dynamic field",
     icon: React.createElement(LuSettings2),
     date: "2024 ",
   },
