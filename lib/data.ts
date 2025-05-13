@@ -130,16 +130,18 @@ export const skillsData = [
   "HTML",
   "CSS",
   "JavaScript",
-  "Firebase",
+  
 
-  "Node.js",
+  
   "MongoDB",
   "TypeScript",
   "Vite",
-  "Express.js",
+  
   "Bootstrap",
   "Tailwind CSS",
   "Material UI",
-  "Aceternity UI",
+  "AWS(EC2,RDS,EB)",
+  "Spring AI",
+  "python-AI +Spring Boot integration",
 
 ] as const;
