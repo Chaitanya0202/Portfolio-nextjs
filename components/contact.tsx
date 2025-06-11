@@ -18,7 +18,7 @@ export default function Contact() {
 
     if (form.current) {
       emailjs
-        .sendForm('service_pay03ib', 'template_hqddj0a', form.current, 'lROG3sen8B7F0LZUn')
+        .sendForm('service_bzuw5oe', 'template_hqddj0a', form.current, 'lROG3sen8B7F0LZUn')
         .then(
           () => {
             toast.success('Email sent successfully!');
@@ -63,7 +63,9 @@ export default function Contact() {
       fullWidth
       required
       type="email"
-      name="from_name"
+      // name="from_name"
+      name="from_email"
+      
       placeholder="Your email"
       color="primary"
       inputProps={{ maxLength: 500 }}

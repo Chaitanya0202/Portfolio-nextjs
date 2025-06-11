@@ -3,7 +3,7 @@ import Contact from '@/components/contact';
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import Other from "@/components/other-projects";
-import Projects from "@/components/projects";
+// import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 import axios from 'axios';
@@ -159,7 +159,7 @@ export default function Home() {
     <main className="flex flex-col items-center px-4">
       <Intro />
       <SectionDivider />
-      <Projects />
+      {/* <Projects /> */}
       <Skills />
       <Experience />
       <Other />

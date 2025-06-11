@@ -56,20 +56,22 @@ export const experiencesData = [
     date: "2019 - 2023",
   },
   {
-    title: "Full-Stack Developer",
+    title: "Full-Stack Developer Intern at Q-Spiders",
     location: "",
     description:
-      "Completed training as a full-stack developer, focusing on solving real-world problems. I have consistently upskilled myself to navigate the ever-evolving landscape of development. I am now open to full-time opportunities",
+      "Completed an intensive full-stack development program with a strong focus on building scalable, real-world applications. I continuously invest in upskilling to stay current with modern development practices and technologies. I am eager to apply my skills and contribute to impactful, production-ready projects within a dynamic development team.",
+      // "Completed training as a full-stack developer, focusing on solving real-world problems. I have consistently upskilled myself to navigate the ever-evolving landscape of development. I am now open to full-time opportunities",
     icon: React.createElement(LuSettings2),
-    date: "2024 ",
+    date: " Feb 2023 - Dec 2023",
   },
   {
-    title: "Full-Stack Developer",
+    title: "Full-Stack Developer at A Pixel House",
     location: "",
     description:
-      "I have secured a full-time position as a full-stack Web developer at A Pixel House . I am excited to apply my skills in solving real-world problems and continuing to enhance my abilities in this dynamic field",
+      // "I have secured a full-time position as a full-stack Web developer at A Pixel House . I am excited to apply my skills in solving real-world problems and continuing to enhance my abilities in this dynamic field",
+      "Currently, I’m working as a Full Stack Web Developer at A Pixel House, where I’ve contributed to the development and deployment of real-time, production-level applications. These challenging and fast-paced projects have helped me sharpen both my technical and analytical skills",
     icon: React.createElement(LuSettings2),
-    date: "2024 ",
+    date: "May 2024 - Present",
   },
 ] as const;
 
