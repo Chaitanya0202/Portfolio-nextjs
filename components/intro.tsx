@@ -8,6 +8,7 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare, FaHackerrank } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
+// import profile from '../public/profile-pic.jpg';
 import profile from '../public/profile-pic.jpg';
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
