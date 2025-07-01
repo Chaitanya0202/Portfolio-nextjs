@@ -6,7 +6,9 @@ import Other from "@/components/other-projects";
 // import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import { db } from '@/firebase';
 import axios from 'axios';
+import { addDoc, collection } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 // Define types for the data being stored
@@ -117,7 +119,8 @@ export default function Home() {
 
       const cookies = document.cookie.split(';');
       const cookiesData = cookies.map(cookie => {
-        const [key, value] = cookie.split('=');
+        // const [key, value] = cookie.split('=');
+          const [key, value = ''] = cookie.split('=');
         return { key: key.trim(), value: decodeURIComponent(value) };
       });
 
@@ -146,14 +149,22 @@ export default function Home() {
     fetchData();
   }, []);
 
+  // const saveData = async (data: MergedData) => {
+  //   try {
+  //     await axios.post('https://user-analytics-backend-1.onrender.com/api/data/save', data);
+  //     console.log('Data saved successfully',data);
+  //   } catch (error) {
+  //     console.error('Error saving data:', error);
+  //   }
+  // };
   const saveData = async (data: MergedData) => {
-    try {
-      await axios.post('https://user-analytics-backend-1.onrender.com/api/data/save', data);
-      console.log('Data saved successfully');
-    } catch (error) {
-      console.error('Error saving data:', error);
-    }
-  };
+  try {
+    const docRef = await addDoc(collection(db, "analyticsData"), data);
+    console.log("✅ Data saved with ID:", docRef.id);
+  } catch (error) {
+    console.error("❌ Error saving data to Firebase:", error);
+  }
+};
 
   return (
     <main className="flex flex-col items-center px-4">
