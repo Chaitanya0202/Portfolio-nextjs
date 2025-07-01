@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="mb-10 px-4 text-center text-gray-500">
       
       <p className="text-sm">
-        - built by <span className="font-bold">Chetan Chavan</span>
+        - built by <span className="font-bold">Chetan </span>
       </p>
     </footer>
   );

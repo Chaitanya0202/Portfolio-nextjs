@@ -8,7 +8,8 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare, FaHackerrank } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
-import profile from '../public/me3.jpg';
+// import profile from '../public/profile-pic.jpg';
+import profile from '../public/profile-pic.jpg';
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
@@ -83,9 +84,13 @@ export default function Intro() {
           Contact me here{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
+        {/*           href="https://drive.google.com/file/d/1iDBiS6S6SWTTSyFrP9jOhJl1pozLkVWw/view?usp=sharing" */}
+{/*           href="https://drive.google.com/file/d/12FYQZyWfXHSMJE-M3JnbgMIXKrgKwK3z/view?usp=drivesdk" */}
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="https://drive.google.com/file/d/12FYQZyWfXHSMJE-M3JnbgMIXKrgKwK3z/view?usp=drivesdk"
+          href="https://drive.google.com/file/d/1zs4pqQpbI3yygpZWVcIhuU1NIpz8tvn9/view?usp=sharing"
+
+        
           target="_blank"
           download
         >
