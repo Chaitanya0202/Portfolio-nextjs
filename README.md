@@ -13,3 +13,5 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL8Dialect
 
 	@Lob
 	private byte image[];
+			@RequestParam String description,
+			@RequestParam MultipartFile image
