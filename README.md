@@ -62,4 +62,45 @@ public class GlobalExceptionHandler {
 	        super(message);
 	    }
 
+     if (optional.isEmpty()) {
+			throw new CourseNotFoundException("COurse Is not FOnd With the id" + id);
+		}
+
      
+    // One-to-One relationship with EmergencyContact01
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("user")
+    private EmergencyContact01 emergencyContact01;
+     
+         @OneToOne
+    @JoinColumn(name = "userID", nullable = false)
+    @JsonIgnoreProperties("userID")
+    private User user;
+
+
+    // One user can have many images
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ImageUp> images;
+
+    	@ManyToOne
+	@JoinColumn(name = "user_id", nullable = false) // Foreign key reference to User
+	@JsonIgnoreProperties("images") // Ignore the "images" field during serialization to avoid recursion
+	private User user;
+
+
+
+      // Mapping With Task
+    @ManyToMany(mappedBy = "users",cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @JsonIgnoreProperties("users")
+    private Set<Task> tasksAssignedTo = new HashSet<>();
+
+
+        @ManyToMany
+    @JoinTable(
+        name = "task_user",  // Join table name
+        joinColumns = @JoinColumn(name = "task_id"),  // Foreign key column for Task
+        inverseJoinColumns = @JoinColumn(name = "assignedTo_id", referencedColumnName = "userID", nullable = true)  // Escaped foreign key column for User
+    )
+    @JsonIgnoreProperties("tasksAssignedTo")
+    private Set<User> users = new HashSet<>();
+    
