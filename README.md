@@ -103,4 +103,15 @@ public class GlobalExceptionHandler {
     )
     @JsonIgnoreProperties("tasksAssignedTo")
     private Set<User> users = new HashSet<>();
-    
+
+
+    ⏱️ Practice Plan (Today Evening)
+1 hour – Revise REST, Spring Boot basics, annotations.
+
+1 hour – Practice React form with API submission.
+
+1 hour – Write a simple full-stack app (CRUD only).
+
+30 mins – Revisit SQL joins, pagination, validations.
+
+30 mins – Go through your resume and past projects.
